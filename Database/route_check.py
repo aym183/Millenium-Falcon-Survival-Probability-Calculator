@@ -15,35 +15,43 @@ class Routes():
 
     def check_routes(self):
     
-        c = conn.cursor()
-        c.execute(f"SELECT * FROM ROUTES WHERE ORIGIN == '{self.current_location}'")
-       
-        for i in c.fetchall():
+                c = conn.cursor()
+                c.execute(f"SELECT * FROM ROUTES WHERE ORIGIN == '{self.current_location}'")
             
-            if i[1] == self.destination:
-                # if (self.autonomy - i[2]) <= 0:
-                #     self.cost += 1
-                #     self.autonomy = 6
-                print(i[1])
-                print('FINISH')
-                self.cost += i[2]
-                self.cost_list.append(self.cost)
-                self.path.append(i[1])
-                
-                self.cost = 0
-                
-            else:
-                
-                # if (self.autonomy - i[2]) <= 0:
-                #     self.cost += 1
-                #     self.autonomy = 6
-                
-                self.path.append(i[1])
-                print(i[1])
-                self.current_location = i[1]
-                self.cost += i[2]
-                self.check_routes()
+                for i in c.fetchall():
+
                     
-    
-        conn.commit()
+                    if i[1] == self.destination:
+                        # if (self.autonomy - i[2]) <= 0:
+                        #     self.cost += 1
+                        #     self.autonomy = 6
+                        print(i[1])
+                        print('FINISH')
+                        self.cost += i[2]
+                        self.cost_list.append(self.cost)
+                        self.path.append(i[1])
+                        print(self.path)
+                        
+                        
+                    else:
+                        
+                        # if (self.autonomy - i[2]) <= 0:
+                        #     self.cost += 1
+                        #     self.autonomy = 6
+                        self.path.append(i[1])
+                        print(i[1])
+                        self.current_location = i[1]
+                        self.cost += i[2]
+                        self.path.append(i[1])
+
+                        c.execute(f"SELECT * FROM ROUTES WHERE ORIGIN == '{i[1]}'")
+                        if(len(c.fetchall())) == 0:
+                            self.cost = 0
+
+                        self.check_routes()
+                            
+            
+                conn.commit()
+
+       
     

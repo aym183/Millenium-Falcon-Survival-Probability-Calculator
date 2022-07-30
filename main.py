@@ -15,3 +15,5 @@ countdown_check = Countdown(new_route.cost_list, countdown_data["countdown"])
 countdown_check.countdown_val()
 
 print(new_route.cost_list)
+
+# print(countdown_data["bounty_hunters"])

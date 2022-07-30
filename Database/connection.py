@@ -1,5 +1,5 @@
 import sqlite3
-conn = sqlite3.connect("universe.db")
+conn = sqlite3.connect("Database/universe.db")
 
 c = conn.cursor()
 
@@ -20,10 +20,8 @@ c.execute("""CREATE TABLE IF NOT EXISTS ROUTES (
 #     ('Tatooine', 'Hoth', 6)
 # """)
 
-# c.execute("""SELECT * FROM ROUTES""")
-# for i in c.fetchall():
-#     print(i)
-    
+# c.execute("""SELECT * FROM ROUTES where DESTINATION = 'wpw'""")
+
 
 conn.commit()
 
