@@ -26,7 +26,7 @@ class Probability():
         
 
     def probability_answer(self):
-        
+   
         if self.trouble_days == 0:
             self.final_probability = 0
 
@@ -40,5 +40,6 @@ class Probability():
             
                 self.final_probability += (9**(i))/(10**(i+1))
             
+            self.final_probability =round(self.final_probability, 2)
             self.final_probability += 0.1
 
