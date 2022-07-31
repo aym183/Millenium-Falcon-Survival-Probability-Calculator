@@ -1,11 +1,11 @@
 import json
 from Database.route_check import Routes
-from Database.countdown_check import Countdown
+from Backend.countdown_check import Countdown
 
-f = open('Back-end/practice-millennium-falcon.json')
+f = open('Backend/practice-millennium-falcon.json')
 data = json.load(f)
 
-g = open('Back-end/practice-empire.json')
+g = open('Backend/practice-empire.json')
 countdown_data = json.load(g)
 
 new_route = Routes(data['departure'], data['arrival'], data['autonomy'])
