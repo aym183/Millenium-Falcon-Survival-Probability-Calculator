@@ -2,6 +2,7 @@ import json
 from Database.route_check import Routes
 from Backend.countdown_check import Countdown
 from Backend.probability_check import Probability
+from Database.travel_time import Travel
 
 f = open('Backend/practice-millennium-falcon.json')
 data = json.load(f)
@@ -17,6 +18,11 @@ for i in range(len(new_route.path)):
         new_route.path[i].insert(0, data['departure'])
 
 print(new_route.path)
+
+travel_check = Travel(new_route.path)
+travel_check.travel_time_check()
+
+print(travel_check.path)
 
 countdown_check = Countdown(new_route.cost_list, countdown_data["countdown"])
 countdown_check.countdown_val()

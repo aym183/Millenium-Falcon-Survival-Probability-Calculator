@@ -9,7 +9,7 @@ class Routes():
         self.static_autonomy = autonomy
         self.var_autonomy = autonomy
         self.current_location = departure
-        self.next_location = None
+        self.prev = None
         self.path=[]
         self.cost = 0
         self.cost_list = []
