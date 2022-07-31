@@ -9,6 +9,7 @@ class Countdown():
     def countdown_val(self):
         for i in self.cost_list:
             
+            
             if i > self.countdown:
                 pass
             else:
