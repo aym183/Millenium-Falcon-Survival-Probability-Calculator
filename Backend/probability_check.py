@@ -6,6 +6,7 @@ class Probability():
         self.probability = []
         self.days = []
         self.trouble_days = 0
+        self.final_probability = 0
 
     def probability_val(self):
         for i in self.bounty_hunters:
@@ -20,5 +21,24 @@ class Probability():
                 if j in self.days:
                     self.trouble_days+=1
                     
-        print(self.trouble_days)
+        print(str(self.trouble_days) + " Here you go")
+        self.probability_answer()
         
+
+    def probability_answer(self):
+        
+        if self.trouble_days == 0:
+            self.final_probability = 0
+
+        elif self.trouble_days == 1:
+
+            self.final_probability = 0.1
+
+        else:
+            
+            for i in range(1, self.trouble_days):
+            
+                self.final_probability += (9**(i))/(10**(i+1))
+            
+            self.final_probability += 0.1
+

@@ -18,7 +18,8 @@ countdown_check.countdown_val()
 probability_check = Probability(countdown_data['bounty_hunters'], countdown_check.valid_countdown)
 probability_check.probability_val()
 
-print(countdown_check.valid_countdown)
+# print(countdown_check.valid_countdown)
 # print(new_route.cost_list)
+print(probability_check.final_probability)
 
 # print(countdown_data["bounty_hunters"])
