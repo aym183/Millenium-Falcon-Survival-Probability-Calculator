@@ -25,18 +25,21 @@ class Probability():
             self.trouble_list.append(self.trouble_days)
             self.trouble_days=0
         print(self.trouble_list)
-                    
-        self.probability_answer(min(self.trouble_list))
+
+        for i in range(len(self.trouble_list)):      
+            self.probability_answer(self.trouble_list[i])
         
 
     def probability_answer(self, trouble_value):
    
         if trouble_value == 0:
             self.final_probability = 0
+            self.probability.append(self.final_probability)
 
         elif trouble_value == 1:
 
             self.final_probability = 0.1
+            self.probability.append(self.final_probability)
 
         else:
             
@@ -46,4 +49,6 @@ class Probability():
             
             self.final_probability =round(self.final_probability, 2)
             self.final_probability += 0.1
+            self.probability.append(self.final_probability)
+            self.final_probability=0
 

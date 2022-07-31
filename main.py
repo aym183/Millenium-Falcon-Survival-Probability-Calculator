@@ -24,19 +24,21 @@ travel_check.travel_time_check()
 
 print(travel_check.path)
 
-countdown_check = Countdown(new_route.cost_list, countdown_data["countdown"])
+countdown_check = Countdown(travel_check.path, countdown_data["countdown"])
 countdown_check.countdown_val()
 
 probability_check = Probability(countdown_data['bounty_hunters'], countdown_check.valid_countdown)
 probability_check.probability_val()
 
 # print(countdown_check.valid_countdown)
-# if probability_check.final_probability == 0:
-#     print('0% chance of survival')
+if min(probability_check.probability) == 0:
+    print('0% chance of survival')
 
-# else:
-#     # final_value = int((1 - probability_check.final_probability)*100)
-#     # print(str(final_value)+ '% chance of survival')
-#      print(probability_check.final_probability)
+else:
+    final_value = int((1 - min(probability_check.probability))*100)
+    print(str(final_value)+ '% chance of survival')
+
+
+    #  print(probability_check.final_probability)
 
 # print(countdown_data["bounty_hunters"])
