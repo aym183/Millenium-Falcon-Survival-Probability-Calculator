@@ -26,7 +26,7 @@ class Routes():
                         if (self.var_autonomy - i[2]) <= 0:
                             self.cost += 1
                             self.var_autonomy = self.static_autonomy
-                        print(i[1])
+                        # print(i[1])
                         print('FINISH')
                         self.var_autonomy -= i[2]
                         self.cost += i[2]

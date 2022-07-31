@@ -1,6 +1,7 @@
 import json
 from Database.route_check import Routes
 from Backend.countdown_check import Countdown
+from Backend.probability_check import Probability
 
 f = open('Backend/practice-millennium-falcon.json')
 data = json.load(f)
@@ -14,6 +15,10 @@ new_route.check_routes()
 countdown_check = Countdown(new_route.cost_list, countdown_data["countdown"])
 countdown_check.countdown_val()
 
-print(new_route.cost_list)
+probability_check = Probability(countdown_data['bounty_hunters'], countdown_check.valid_countdown)
+probability_check.probability_val()
+
+print(countdown_check.valid_countdown)
+# print(new_route.cost_list)
 
 # print(countdown_data["bounty_hunters"])
