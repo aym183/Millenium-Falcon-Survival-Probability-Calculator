@@ -43,12 +43,12 @@ class Main():
             probability_check.probability_val()
 
             # print(countdown_check.valid_countdown)
-            if min(probability_check.probability) == 0:
+            if max(probability_check.probability) == 0:
                 print('0% chance of survival')
                 return 0
 
             else:
-                final_value = int((1 - min(probability_check.probability))*100)
+                final_value = int((1 - max(probability_check.probability))*100)
                 print(str(final_value)+ '% chance of survival')
                 return final_value
 

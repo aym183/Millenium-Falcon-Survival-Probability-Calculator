@@ -13,7 +13,6 @@ class Probability():
         for i in self.bounty_hunters:
             
             self.days.append(i['day'])
-        print(self.days)
         self.probability_check()
 
     def probability_check(self):

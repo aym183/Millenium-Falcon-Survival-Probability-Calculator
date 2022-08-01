@@ -18,6 +18,50 @@ class TestTatooine(unittest.TestCase):
 
         self.assertEqual(result.run_method(), 0)
 
+
+    def test_two(self):
+        autonomy = 6
+        departure = "Dagobah"
+        arrival = "Endor"
+        countdown = 6
+        bounty_hunters = [
+        {"planet": "Hoth", "day": 6 }, 
+        {"planet": "Hoth", "day": 7 },
+        {"planet": "Hoth", "day": 8 }
+        ]
+
+        result = Main(departure, arrival, autonomy, bounty_hunters, countdown)
+
+        self.assertEqual(result.run_method(), 0)
+
+    def test_three(self):
+
+        autonomy = 6
+        departure = "Dagobah"
+        arrival = "Endor"
+        countdown = 10
+        bounty_hunters = [
+        {"planet": "Hoth", "day": 6 }, 
+        {"planet": "Hoth", "day": 7 },
+        {"planet": "Hoth", "day": 8 }
+        ]
+        result = Main(departure, arrival, autonomy, bounty_hunters, countdown)
+
+        self.assertEqual(result.run_method(), 73)
+
+    def test_three(self):
+
+        autonomy = 6
+        departure = "Dagobah"
+        arrival = "Endor"
+        countdown = 10
+        bounty_hunters = [
+        {"planet": "Hoth", "day": 6 }
+        ]
+        result = Main(departure, arrival, autonomy, bounty_hunters, countdown)
+
+        self.assertEqual(result.run_method(), 90)
+
 # class Dagobah(unittest.TestCase):
 
 # class Endor(unittest.TestCase):
