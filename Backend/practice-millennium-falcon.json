@@ -1,6 +1,6 @@
 {
-    "autonomy": 5,
-    "departure": "Dagobah",
+    "autonomy": 7,
+    "departure": "Hoth",
     "arrival": "Endor",
     "routes_db": "universe.db"
   }

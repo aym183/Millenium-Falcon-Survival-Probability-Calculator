@@ -42,7 +42,8 @@ class Main():
             probability_check = Probability(self.bounty_hunters, countdown_check.valid_countdown)
             probability_check.probability_val()
 
-            # print(countdown_check.valid_countdown)
+            # print(countdown_check.valid_countdown
+
             if max(probability_check.probability) == 0:
                 print('0% chance of survival')
                 return 0
