@@ -14,5 +14,3 @@ class Countdown():
             else:
                 self.valid_countdown.append(i[0])
                 print("You have destroyed the Deathstar!")
-                # self.min_countdown = min(self.valid_countdown)
-        print(self.valid_countdown)
