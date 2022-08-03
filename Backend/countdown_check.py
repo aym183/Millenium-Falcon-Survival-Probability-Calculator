@@ -6,6 +6,7 @@ class Countdown():
         self.valid_countdown = []
         self.min_countdown = 0
 
+    # Method that checks whether overall path cost is less than the countdown to be valid
     def countdown_val(self):
         for i in self.path:           
             

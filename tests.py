@@ -1,6 +1,9 @@
 import unittest
 from main import Main
 
+# Classes containing unit tests that validates the entire program
+
+# Tests for origin with Dagobah
 class Dagobah(unittest.TestCase):
 
     def test_one(self):
@@ -15,7 +18,6 @@ class Dagobah(unittest.TestCase):
         ]
 
         result = Main(departure, arrival, autonomy, bounty_hunters, countdown)
-
         self.assertEqual(result.run_method(), 0)
 
 
@@ -31,7 +33,6 @@ class Dagobah(unittest.TestCase):
         ]
 
         result = Main(departure, arrival, autonomy, bounty_hunters, countdown)
-
         self.assertEqual(result.run_method(), 0)
 
     def test_three(self):
@@ -46,7 +47,6 @@ class Dagobah(unittest.TestCase):
         {"planet": "Hoth", "day": 8 }
         ]
         result = Main(departure, arrival, autonomy, bounty_hunters, countdown)
-
         self.assertEqual(result.run_method(), 73)
 
     def test_four(self):
@@ -59,10 +59,9 @@ class Dagobah(unittest.TestCase):
         {"planet": "Hoth", "day": 6 }
         ]
         result = Main(departure, arrival, autonomy, bounty_hunters, countdown)
-
         self.assertEqual(result.run_method(), 90)
 
-
+# Tests for origin with Tatooine
 class TestTatooine(unittest.TestCase):
 
     def test_one(self):
@@ -77,7 +76,6 @@ class TestTatooine(unittest.TestCase):
         ]
 
         result = Main(departure, arrival, autonomy, bounty_hunters, countdown)
-
         self.assertEqual(result.run_method(), 81)
 
 
@@ -93,7 +91,6 @@ class TestTatooine(unittest.TestCase):
         ]
 
         result = Main(departure, arrival, autonomy, bounty_hunters, countdown)
-
         self.assertEqual(result.run_method(), 73)
 
     def test_three(self):
@@ -105,10 +102,11 @@ class TestTatooine(unittest.TestCase):
         bounty_hunters = [
         {"planet": "Hoth", "day": 6 }
         ]
+        
         result = Main(departure, arrival, autonomy, bounty_hunters, countdown)
-
         self.assertEqual(result.run_method(), 90)
 
+# Tests for origin with Hoth
 class Hoth(unittest.TestCase):
 
     def test_one(self):
@@ -123,7 +121,6 @@ class Hoth(unittest.TestCase):
         ]
 
         result = Main(departure, arrival, autonomy, bounty_hunters, countdown)
-
         self.assertEqual(result.run_method(), 81)
 
 
@@ -137,10 +134,7 @@ class Hoth(unittest.TestCase):
         ]
 
         result = Main(departure, arrival, autonomy, bounty_hunters, countdown)
-
         self.assertEqual(result.run_method(), 90)
-
-
 
 if __name__ == "__main__":
     unittest.main()

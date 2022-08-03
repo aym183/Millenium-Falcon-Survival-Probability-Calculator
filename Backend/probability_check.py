@@ -9,12 +9,14 @@ class Probability():
         self.final_probability = 0
         self.trouble_list = []
 
+    # Method to get all the possible days that could be potentially dangerous
     def probability_val(self):
         for i in self.bounty_hunters:
             
             self.days.append(i['day'])
         self.probability_check()
 
+    # Method to calculate all the days that overlap within the path cost and bounty hunters
     def probability_check(self):
         for i in self.valid_countdown:
             for j in range(1, i+1):
@@ -23,12 +25,11 @@ class Probability():
 
             self.trouble_list.append(self.trouble_days)
             self.trouble_days=0
-        print(self.trouble_list)
-
+ 
         for i in range(len(self.trouble_list)):      
             self.probability_answer(self.trouble_list[i])
         
-
+    # Method to calculate all the days that overlap within the path cost and bounty hunters
     def probability_answer(self, trouble_value):
    
         if trouble_value == 0:
