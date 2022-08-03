@@ -1,6 +1,7 @@
 import sqlite3
 conn = sqlite3.connect("Database/universe.db")
 
+# Creation of universe.db
 c = conn.cursor()
 
 c.execute("""CREATE TABLE IF NOT EXISTS ROUTES (
